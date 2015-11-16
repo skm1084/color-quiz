@@ -1,0 +1,60 @@
+body{
+	max-width: 1300px;
+	min-width: 300px;
+	position: relative;
+	text-align: center;
+	background-color: #000000;
+	color: #FFFFFF;
+	font-family: 'Patrick Hand', cursive;
+	background-image: url('../images/colors.jpg');
+}
+h1{
+	font-size: 4rem;
+	letter-spacing: 0.1em;
+}
+#question_wrapper{
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	font-size: 2rem;
+	letter-spacing: 0.05em;
+}
+.question{
+	margin-right: auto;
+	margin-left: auto;
+	display: inline-block;
+	text-align: left;
+	font-size: 2rem;
+	letter-spacing: 0.05em;
+}
+#answer_holder{
+	margin-right: auto;
+	margin-left: auto;
+	display: inline-block;
+	text-align: left;
+	font-size: 2rem;
+	letter-spacing: 0.05em;
+
+}
+.answer{
+	padding-left: 2rem;
+	line-height: 2rem;
+}
+#submit{
+	background-color: #FFFFFF;
+	color:#000000;
+	border: none;
+	border-radius: 7px;
+	margin-top: 3rem;
+	margin-right: 2rem;
+	font-size: 1.5rem;
+	padding: 0.4rem;
+}
+#retry_button{
+	background-color: #FFFFFF;
+	color:#000000;
+	border: none;
+	border-radius: 7px;
+	font-size: 1.5rem;
+	padding: 0.4rem;
+}
