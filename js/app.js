@@ -55,6 +55,12 @@ $(document).ready(function() {
     });
     function nextQuestion() {
         if (currentQuestion < 5) {
+        	var correctAnswer = questions[currentQuestion-1].correct;
+        	var userAnswer = $("input:checked").val();
+        	console.log(userAnswer + " " + correctAnswer);
+        	if (correctAnswer == userAnswer){
+        		numberCorrect++;
+        	}
             $(".question").remove();
             $("#answer_holder input").remove();
             $("#answer_holder span").remove();
@@ -62,9 +68,15 @@ $(document).ready(function() {
             var newQuestion = '<span class="question">'+questions[currentQuestion].question+'</span><br><div id="answer_holder"><input type="radio" name="option" class="option" value="0"><span class="answer">'+questions[currentQuestion].choices[0]+'</span><br><input type="radio" name="option" class="option" value="1"><span class="answer">'+questions[currentQuestion].choices[1]+'</span><br><input type="radio" name="option" class="option" value="2"><span class="answer">'+questions[currentQuestion].choices[2]+'</span><br><input type="radio" name="option" class="option" value="3"><span class="answer">'+questions[currentQuestion].choices[3]+'</span><br></div><div id="button_holder"><input type="button" id="submit" value="Submit"><span id="hint"></span><input type="button" id="retry_button" value="Try Again!"></div>';
             $("#question_wrapper").html(newQuestion);
             var lastFact= questions[currentQuestion-1].fact;
-            $("#last_question_fact").html(lastFact).fadeIn();
+            $("#last_question_fact").html(lastFact).fadeIn(3000);
         }
         else {
+        	var correctAnswer = questions[currentQuestion-1].correct;
+        	var userAnswer = $("input:checked").val();
+        	console.log(userAnswer + " " + correctAnswer);
+        	if (correctAnswer == userAnswer){
+        		numberCorrect++;
+        	}
             $(".question").remove();
             $("#answer_holder input").remove();
             $("#answer_holder span").remove();
@@ -72,14 +84,14 @@ $(document).ready(function() {
             $("#submit").css("display", "none");
             $("#retry_button").css("display", "inline");
             var lastFact= questions[currentQuestion-1].fact;
-            $("#last_question_fact").html(lastFact);
+            $("#last_question_fact").html(lastFact).fadeOut(30000);
             if (numberCorrect == 1) {
                 var finalScore = '<span id="final">Congratulations on finishing the quiz!  You correctly answered '+numberCorrect+' question.'
-                $("#answer_holder").html(finalScore);
+                $("#answer_holder").html(finalScore).fadeIn(3000);
             }
             else {
                 var finalScore = '<span id="final">Congratulations on finishing the quiz!  You correctly answered '+numberCorrect+' questions.'
-                $("#answer_holder").html(finalScore);
+                $("#answer_holder").html(finalScore).fadeIn(3000);
             }
         }
     }
